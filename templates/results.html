@@ -1,0 +1,14 @@
+{% extends 'index.html'%} {% block body%}
+
+<h1 class="heading color-text">Search results:</h1>
+
+<div class="query_container">
+  <h3 class="heading3 color-text">Query image</h3>
+  <img src="{{ image }}" alt="Query image" class="query_image" />
+</div>
+
+<div class="container result_container">
+  {% for item in results %}
+  <img src="{{ item }}" alt="Image" class="result_image" />
+  {% endfor %} {% endblock %}
+</div>

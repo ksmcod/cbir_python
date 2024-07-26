@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PhotoFinder</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container-2"><a href="/" class="title">PhotoFinder</a></div>
+    </nav>
+
+    <div class="container">
+      {% block body %}
+
+      <h1 class="heading">Upload - Search - Find</h1>
+
+      <form action="/results" method="POST" enctype="multipart/form-data">
+        <div class="box">
+          <div class="query_box">
+            <img src="/static/icons/image.png" alt="Upload" class="icon" />
+            <label for="query_image" class="label">Upload query photo</label>
+            <input type="file" id="query_image" name="query" />
+          </div>
+
+          <div class="query_box">
+            <img src="/static/icons/new-folder.png" alt="folder" class="icon" />
+            <label for="db_images" class="label">Upload database images</label>
+            <input
+              type="file"
+              name="database"
+              multiple
+              value="Database"
+              id="db_images"
+            />
+          </div>
+        </div>
+
+        <label for="search" class="small_label">
+          <img src="/static/icons/search.png" alt="Search" class="small_icon" />
+          <span>Search</span></label
+        >
+        <input type="submit" id="search" value="Upload" />
+      </form>
+
+      <script src="/static/script.js" defer></script>
+      {% endblock %}
+    </div>
+  </body>
+</html>
